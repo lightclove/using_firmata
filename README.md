@@ -75,4 +75,8 @@ If you see symbols like "������������" instead of the ex
    Confirm that your port terminal or port monitor uses the correct character encoding (usually UTF-8). You can change the encoding in the Arduino IDE port monitor in the lower right corner.
 
 3. **Incoming Data Processing:**
-   Ensure that your sketch correctly processes incoming data. Use the appropriate data types and reading methods when reading data from Serial (e.g., Char for characters).
+The Firmatacommunicator class has one responsibility - to provide communication with Arduino through Firmata Protocol.
+The class can be expanded, for example, adding new methods for data processing without changing the existing code.
+Inheritance is not used in this example.
+The class with information (port and data transfer speed) is responsible for installing the connection.
+High Cohesion: Class methods are due to the fact that all of them relate to interaction with Arduino.
